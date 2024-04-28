@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Đăng nhập hệ thống</title>
+
+    <!-- boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <!-- google fonts -->
+</head>
+<style>
+    /* Global styles */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('img/Meimeipet.com.gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container styles */
+.login-container {
+    width: 380px;
+    background: #edc7c7;
+    border: 2px solid rgba(224, 17, 17, 0.2);
+   
+    color: rgb(19, 17, 17);
+    border-radius: 14px;
+    padding: 30px 40px;
+}
+
+/* Heading styles */
+.login-container h1 {
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Social icons styles */
+.social-icons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-icons .icon {
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(230, 1, 1);
+    margin: 0 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    padding: 7px 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: #131212;
+}
+p{
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form container styles */
+.form-container {
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Form message container styles */
+.form-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+/* Form input and button styles */
+input,
+button {
+    width: 100%;
+    height: 100%;
+    height: 50px;
+    margin: 10px 0;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 60px;
+    font-size: 15px;
+    color: rgb(27, 27, 27);
+    text-indent: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input::placeholder {
+    color: rgb(14, 13, 13);
+    text-indent: 15px;
+    font-weight: lighter;
+}
+
+input:focus,
+button:focus {
+    border-color: transparent;
+}
+
+button {
+    background-color: #ffffff;
+    color: rgb(14, 14, 14);
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease ease-in-out;
+    font-size: 22px;
+    text-align: center;  
+}
+
+button:hover {
+    background-color: #ec1707;
+}
+
+/* Anchor tag styles */
+a {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(12, 9, 12);
+    transition: 0.4s ease-in-out;
+    font-size: 20px;
+}
+
+a:hover {
+    color: rgb(231, 59, 59);
+    text-decoration: none;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+</style>
+<body>
+    <div class="login-container">
+        <div class="login-form" id="loginForm">
+            <h1>ĐĂNG NHẬP</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-github'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
+            </div>
+
+            <div class="form-message-container">
+                <span>Sử dụng email và mật khẩu</span>
+            </div>
+
+            <form>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Mật khẩu">
+                <button>ĐĂNG NHẬP</button>
+                <a href="cuahang.html">Cửa hàng</a>
+            </form>
+            <p style="font-size: 20px;">Chưa có tài khoản? <a href="#" id="showSignup">Đăng kí</a></p>
+        </div>
+        <div class="signup-form hidden" id="signupForm">
+            <h1>Tạo tài khoản</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-github'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <div class="form-message-container">
+                <span>Sử dụng email để đăng kí</span>
+            </div>
+
+            <form>
+                <input type="text" placeholder="Tên">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Mật khẩu">
+                <button>ĐĂNG KÍ</button>
+            </form>
+            <p style="font-size: 20px;">Đã có tài khoản! <a href="#" id="showLogin">Đăng nhập</a></p>
+        </div>
+    </div>
+    <script>
+   // Lấy tham chiếu đến biểu mẫu đăng nhập, biểu mẫu đăng ký và các nút để chuyển đổi giữa chúng
+const loginForm = document.getElementById('loginForm'); // Tham chiếu đến biểu mẫu đăng nhập
+const signupForm = document.getElementById('signupForm'); // Tham chiếu đến biểu mẫu đăng ký
+const showSignupBtn = document.getElementById('showSignup'); // Nút để hiển thị biểu mẫu đăng ký
+const showLoginBtn = document.getElementById('showLogin'); // Nút để hiển thị biểu mẫu đăng nhập
+
+// Bộ lắng nghe sự kiện để chuyển sang biểu mẫu đăng ký khi nút 'Đăng ký' được nhấn
+showSignupBtn.addEventListener('click', () => {
+    loginForm.classList.add('hidden'); // Ẩn biểu mẫu đăng nhập
+    signupForm.classList.remove('hidden'); // Hiện biểu mẫu đăng ký
+});
+
+// Bộ lắng nghe sự kiện để chuyển sang biểu mẫu đăng nhập khi nút 'Đăng nhập' được nhấn
+showLoginBtn.addEventListener('click', () => {
+    loginForm.classList.remove('hidden'); // Hiện biểu mẫu đăng nhập
+    signupForm.classList.add('hidden'); // Ẩn biểu mẫu đăng ký
+});
+
+
+"use strict";
+    const form = document.getElementById("form");
+    form.addEventListener("Đăng kí", function (event) { });
+    form.addEventListener("Đăng kí", function (event) {
+    // Prevent page reload on submit
+    event.preventDefault(); 
+    // Selecting the email value filled by the user
+    const email = document.getElementById("email").value;
+});
+
+form.addEventListener("Đăng kí", function (event) {
+    // Preventing page reload on submit
+    event.preventDefault(); 
+
+    // Selecting the email value filled by the user
+    const email = document.getElementById("email").value;
+
+    // Checking for valid email using a simple regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+      alert("Wrong email format");
+      return;
+    }
+
+    // If everything passes, show success message
+    alert("Form submitted successfully");
+});
+    $(document).ready(function(){
+        alert('Thành công')
+    });
+
+        </script>
+</body>
+</html>

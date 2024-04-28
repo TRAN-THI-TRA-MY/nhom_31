@@ -1,0 +1,391 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.banner-image{
+    width: 100%;
+    height: 500px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    z-index: 1000; /* Sử dụng z-index để đảm bảo nằm trên tất cả các phần tử khác */
+    display: none; /* Ban đầu ẩn đi */
+}
+.header{
+    height: 70px;
+    width: 90%;
+    background-color: rgb(226, 155, 122);
+    border-radius: 3px;
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    position: sticky;
+    top: 0; 
+    z-index: 2;
+}
+.header .logo{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(7, 7, 7);
+    font-family: Bradley Hand, cursive;
+   
+}
+
+.menu-small{
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+   
+}
+.menu-small a {
+   margin-left: 40px;/* Thêm margin để tạo khoảng cách giữa các phần tử */
+    cursor: pointer;
+    font-size: 22px;
+}
+.menu-small a:hover{
+  color: #59ac22;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.cart{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+    
+}
+.fa-solid{
+    color: rgb(16, 16, 16);
+}
+.cart p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: rgb(120, 183, 207);
+    color: white;
+}
+.container{
+    display: flex;
+    width: 90%;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+#root{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-left: 20px;
+}
+.close-cart {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 24px; 
+    width: 40px; 
+    height: 40px;
+}
+.sidebar{
+    width: 360px;
+    border-radius: 5px;
+    background-color: #eee;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 1001; /* Sử dụng z-index để đảm bảo nằm trên overlay */
+    display: none; /* Ban đầu ẩn đi */
+
+}
+.head{
+    background-color: rgb(243, 132, 117);
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+}
+.rating-value{
+    font-size: 22px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.star-rating{
+    cursor: pointer;
+    font-size: 1rem;
+    transform: scale(0.8);
+}
+.star-rating i:hover{
+    color: #4dd5da;
+}
+.fill {
+    display: none;
+    color: rgb(255, 136, 0);
+}
+/*i .fill {
+    color: rgb(255, 196, 0);
+}
+*/
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(64, 87, 122);
+    border-radius: 5px;
+    padding: 15px;
+    
+}
+.img-box{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images{
+    max-width: 90%;
+    max-height: 88%;
+    object-fit: cover;
+    object-position: center;
+}
+.bottom{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+h2{
+    font-size: 18px;
+    color: rgba(19, 18, 18, 0.863);
+  
+}
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: goldenrod;
+    padding: 7px 25px;
+    cursor: pointer;
+    color: white;
+}
+button:hover{
+    background-color: #59ac22;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+    margin: 10px 10px;
+}
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid rgb(223, 66, 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
+    border-radius: 50%;
+}
+.fa-trash:hover{
+    cursor: pointer;
+    color: #e61c1c;
+}
+
+
+
+/* Footer*/
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-footer {
+    max-width: 1170px;
+    margin: auto;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*flex-wrap: wrap;*/
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #2b3449;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+/*responsive*/
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+.footer p {
+    color: #ffffff;
+    text-align: center; 
+    width: 100%; 
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+/* end footer*/
+.login-icon {
+    cursor: pointer;
+    margin-right: 30px;
+}
+<!--margin-left800px-->
+/* CSS cho hiệu ứng phóng to */
+.img-box img {
+    transition: transform 0.3s ease;
+}
+.icon-home{
+    cursor: pointer;
+    margin-right: 30px;  
+}
+.img-box img:hover {
+    transform: scale(1.3); 
+    
+}
